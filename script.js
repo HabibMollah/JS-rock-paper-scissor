@@ -14,6 +14,42 @@ function getComputerChoice() {
   return choices[randomIndex()];
 }
 
+const user = getUserChoice;
+const computer = getComputerChoice();
 // Judgement
-console.log(`Your weapon is ${getUserChoice}.`);
-console.log(`Computer's weapon is ${getComputerChoice()}`);
+console.log("Computer's weapon: " + computer);
+console.log("Your weapon: " + user);
+let result;
+function judgement(computer, user) {
+  if (
+    (computer === "rock" && user === "scissor") ||
+    (computer === "paper" && user === "rock") ||
+    (computer === "scissor" && user === "paper")
+  ) {
+    if (computer === "rock") {
+      result = "You Lose! Rock beats Scissor 🤖 🤖 🤖";
+    } else if (computer === "paper") {
+      result = "You Lose! Paper beats Rock 🤖 🤖 🤖";
+    } else {
+      result = "You Lose! Scissor beats Paper 🤖 🤖 🤖";
+    }
+  } else if (
+    (computer === "rock" && user === "paper") ||
+    (computer === "paper" && user === "scissor") ||
+    (computer === "scissor" && user === "rock")
+  ) {
+    if (user === "paper") {
+      result = "You Win! Paper beats Rock 🧠 🧠 🧠";
+    } else if (user === "scissor") {
+      result = "You Win! Scissor beats Paper 🧠 🧠 🧠";
+    } else {
+      result = "You Win! Rock beats Scissor 🧠 🧠 🧠";
+    }
+  } else if (computer === user) {
+    result = "Tie 🤖 ⚔ 🧠";
+  } else {
+    result = "Invalid weapon";
+  }
+  return result;
+}
+console.log(judgement(computer, user));
