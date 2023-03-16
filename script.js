@@ -6,7 +6,7 @@ let getUserChoice = prompt("Choose your weapon from rock, paper or scissor:");
 getUserChoice = getUserChoice.toLowerCase();
 
 // Computer's choice
-const choices = ["rock ", "paper", "scissor"];
+const choices = ["rock", "paper", "scissor"];
 let randomIndex = () => {
   return Math.floor(Math.random() * choices.length);
 };
